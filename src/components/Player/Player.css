@@ -4,11 +4,15 @@
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    background: #0000FF;
+    background: #0652DD;
 }
 
 li:nth-of-type(2n) {
-  background: #FF0000;
+  background: #EA2027;
+}
+
+li:nth-of-type(3n) {
+  background: #009432;
 }
 
 .Player__name {
@@ -26,7 +30,7 @@ li:nth-of-type(2n) {
 }
 
 .Player__button {
-    width: 5%;
+    width: 7%;
     padding: 10px;
     text-align: center;
     cursor: pointer;
