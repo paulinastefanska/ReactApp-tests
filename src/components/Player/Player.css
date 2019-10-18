@@ -4,15 +4,18 @@
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    background: #0652DD;
 }
 
-li:nth-of-type(2n) {
-  background: #EA2027;
+li:nth-of-type(3n+1) {
+  background: #1e90ff;
 }
 
-li:nth-of-type(3n) {
-  background: #009432;
+li:nth-of-type(3n+2) {
+  background: #ff4757;
+}
+
+li:nth-of-type(3n+3) {
+  background: #2ed573; 
 }
 
 .Player__name {
