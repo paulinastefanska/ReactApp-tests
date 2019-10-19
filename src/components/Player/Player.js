@@ -1,5 +1,9 @@
 import React from 'react';
 import './Player.css';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 
 const Player = (props) => (
   <li className="Player">
@@ -7,6 +11,7 @@ const Player = (props) => (
     <span className="Player__score">{props.score}</span>
     <span className="Player__button" onClick={() => props.onPlayerScoreChange(1)} >+</span>
     <span className="Player__button" onClick={() => props.onPlayerScoreChange(-1)} >-</span>
+    <span className="Player__button" onClick={props.onPlayerRemove} >x</span>
   </li>
 );
 

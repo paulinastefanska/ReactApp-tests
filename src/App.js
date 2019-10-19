@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayerList from './components/PlayerList/PlayerList';
 import AddPlayer from './components/AddPlayer/AddPlayer'
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 
 class App extends Component {
   constructor() {
@@ -33,11 +37,24 @@ class App extends Component {
 	  })
 	};
 
+	onPlayerRemove = index => {
+      const newPlayerList = this.state.players.filter(
+          (player, playerIndex) => playerIndex !== index
+      );
+      this.setState({ players: newPlayerList });
+  };
+
   render() {
     return (
       <div className="App">
-      	<AddPlayer onPlayerAdd={this.onPlayerAdd} />
-      	<PlayerList players={this.state.players} onScoreUpdate={this.onScoreUpdate} />
+      	<AddPlayer 
+      		onPlayerAdd={this.onPlayerAdd} 
+      	/>
+      	<PlayerList 
+      		players={this.state.players} 
+      		onScoreUpdate={this.onScoreUpdate}
+      		onPlayerRemove={this.onPlayerRemove} 
+      	/>
       </div>
     );
   }
