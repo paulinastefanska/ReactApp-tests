@@ -47,3 +47,14 @@ it('should call onPlayerScoreChange with 1 when minus button is clicked', () => 
 
   expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
 });
+
+it('should call onPlayerRemove when Remove button is clicked', () => {
+    const mockedonPlayerRemove = jest.fn();
+    const playerComponent = shallow(<Player onPlayerRemove={mockedonPlayerRemove} />);
+
+    const delButton = playerComponent.find('.Player__button').last();
+
+    delButton.simulate('click');
+
+    expect(mockedonPlayerRemove).toBeCalled();
+});
